@@ -24,6 +24,9 @@ const Footer = () => {
                   <h1 className="text-4xl font-bold mb-2">
                     Subscribe us for the latest newsletter
                   </h1>
+                  <h1 className="text-4xl font-bold mb-2">
+                    Subscribe us for the latest newsletter
+                  </h1>
                   <p>
                     Expand your knowledge and skills by choosing the right mentor!
                   </p>
@@ -45,7 +48,7 @@ const Footer = () => {
           <div className="grid gap-8 md:grid-cols-4">
             <div className="text-white">
               <span className="font-bold text-2xl">Quick Links</span>
-              <hr className="w-1/2 h-[3px] bg-[#dc3545] my-3" />
+              <hr className="w-1/2 h-[3px] bg-[#1ab79d] my-3" />
               <div className="flex items-center">
                 <FaAngleRight />
                 <a className="link link-hover">Home</a>
@@ -70,7 +73,7 @@ const Footer = () => {
 
             <div className="text-white">
               <span className="font-bold text-2xl">Other Links</span>
-              <hr className="w-1/2 h-[3px] bg-[#dc3545] my-3" />
+              <hr className="w-1/2 h-[3px] bg-[#1ab79d] my-3" />
               <div className="flex items-center">
                 <FaAngleRight />
                 <a className="link link-hover">Blog</a>
@@ -87,7 +90,7 @@ const Footer = () => {
 
             <div className="text-white">
               <span className="font-bold text-2xl">Courses</span>
-              <hr className="w-1/2 h-[3px] bg-[#dc3545] my-3" />
+              <hr className="w-1/2 h-[3px] bg-[#1ab79d] my-3" />
               <div className="flex items-center">
                 <FaAngleRight />
                 <a className="link link-hover">Entrepreneurship</a>
@@ -104,7 +107,7 @@ const Footer = () => {
 
             <div className="text-white">
               <span className="font-bold text-2xl">Contact Us</span>
-              <hr className="w-1/2 h-[3px] bg-[#dc3545] my-3" />
+              <hr className="w-1/2 h-[3px] bg-[#1ab79d] my-3" />
               <div className="flex items-center gap-x-2">
                 <FaHome className="text-4xl p-2 bg-[#1ab79d] rounded-xl text-white"></FaHome>
                 <a className="link link-hover">
