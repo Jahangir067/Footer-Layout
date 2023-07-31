@@ -27,6 +27,9 @@ const Footer = () => {
                   <h1 className="text-4xl font-bold mb-2">
                     Subscribe us for the latest newsletter
                   </h1>
+                  <h1 className="text-4xl font-bold mb-2">
+                    Subscribe us for the latest newsletter
+                  </h1>
                   <p>
                     Expand your knowledge and skills by choosing the right mentor!
                   </p>
