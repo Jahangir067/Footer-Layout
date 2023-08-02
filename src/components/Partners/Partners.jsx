@@ -13,9 +13,9 @@ const Partners = () => {
                     <p>Our dedicated placement team will get in touch with you to discuss your requirement and take you through the hiring process, learner profiles and timelines.</p>
                 </div>
 
-                <form className="shadow-2xl w-full lg:w-5/12 bg-white rounded p-12 py-12">
+                <form className="shadow-2xl w-full lg:w-5/12 bg-white rounded p-12">
 
-                <div className="relative z-0 w-full mb-6 group">
+                <div className="relative z-0 w-full mb-6 group pt-8">
                             <input
                                 type="text"
                                 name="floating_first_name"

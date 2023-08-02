@@ -9,7 +9,6 @@ function App() {
    <div>
      <Partners />
      <NewsLetter />
-     {/* <Login /> */}
     <Footer />
    </div>
   )
