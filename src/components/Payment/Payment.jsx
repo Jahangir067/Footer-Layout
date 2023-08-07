@@ -1,10 +1,78 @@
+import { useEffect, useRef, useState } from "react";
 import {
     FaVoicemail,
     FaPhoneAlt,
 } from "react-icons/fa";
 import QRCode from "react-qr-code";
-const Payment = () => {
 
+const Payment = () => {
+    const Ref = useRef(null);
+    const [timer, setTimer] = useState('00:00:00');
+    const [time, setTime] = useState(false)
+    console.log(time)
+
+    const getTimeRemaining = (e) => {
+        const total = Date.parse(e) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor((total / 1000 / 60 / 60) % 24);
+        return {
+            total, hours, minutes, seconds
+        };
+    }
+
+    const startTimer = (e) => {
+        let { total, hours, minutes, seconds }
+                    = getTimeRemaining(e);
+        if (total >= 0) {
+ 
+            // update the timer
+            // check if less than 10 then we need to
+            // add '0' at the beginning of the variable
+            setTime(true)
+            setTimer(
+                (hours > 9 ? hours : '0' + hours) + ':' +
+                (minutes > 9 ? minutes : '0' + minutes) + ':'
+                + (seconds > 9 ? seconds : '0' + seconds)
+            )
+        }
+    }
+
+    const clearTimer = (e) => {
+ 
+        // If you adjust it you should also need to
+        // adjust the Endtime formula we are about
+        // to code next   
+        setTimer('00:00:10');
+ 
+        // If you try to remove this line the
+        // updating of timer Variable will be
+        // after 1000ms or 1sec
+        if (Ref.current) clearInterval(Ref.current);
+        const id = setInterval(() => {
+            startTimer(e);
+        }, 1000)
+        Ref.current = id;
+    }
+    const getDeadTime = () => {
+        let deadline = new Date();
+ 
+        // This is where you need to adjust if
+        // you entend to add more time
+        deadline.setSeconds(deadline.getSeconds() + 10);
+        return deadline;
+    }
+    useEffect(() => {
+        clearTimer(getDeadTime());
+    }, []);
+ 
+    // Another way to call the clearTimer() to start
+    // the countdown is via action event from the
+    // button first we create function to be called
+    // by the button
+    const onClickReset = () => {
+        clearTimer(getDeadTime());
+    }
 
     return (
         <div className="hero min-h-screen mb-8">
@@ -96,9 +164,9 @@ const Payment = () => {
                     <div className="md:flex items-center justify-between bg-[#f5f6f7]">
                         <div className="md:flex hidden gap-2 mx-2">
                             <img className="h-6 w-12" src="https://i.ibb.co/8cS08gX/images-1-removebg-preview-1.png" alt="" />
-                            <img className="h-6 w-12" src="https://i.ibb.co/DVRnfQT/download.jpg" alt="" />
-                            <img className="h-6 w-12" src="https://i.ibb.co/KWKhhmS/download-5.png" alt="" />
-                            <img className="h-6 w-12" src="https://i.ibb.co/zPRfkBV/download-6.png" alt="" />
+                            <img className="h-8 w-12" src="https://i.ibb.co/Z8XpVXg/visa-349221.png" alt="" />
+                            <img className="h-6 w-12" src="https://i.ibb.co/0n0515F/maestro-217445.png" alt="" />
+                            <img className="h-6 w-12" src="https://i.ibb.co/3vybWr4/ruble-10040420.png" alt="" />
                             <img className="h-6 w-12" src="https://i.ibb.co/7GX248v/download-7.png" alt="" />
 
                         </div>
@@ -123,7 +191,18 @@ const Payment = () => {
                                 />
                             </div>
                             <div>
-                                This is QR Code
+                                <p>Scan the QR using any UPI app on your phone</p>
+                            <div className="flex justify-center">
+                                <img className="h-8 w-12" src="https://i.ibb.co/HdcNn0J/images-2-removebg-preview-1.png" alt="" />
+                                <img className="h-8 w-12" src="https://i.ibb.co/WGnTwK7/images-3-removebg-preview.png" alt="" />
+                                <img className="h-8 w-12" src="https://i.ibb.co/WP6Py6v/images-4-removebg-preview.png" alt="" />
+                                <img className="h-8 w-12" src="https://i.ibb.co/SPFczny/download-8-removebg-preview.png" alt="" />
+                            </div>
+                            <div>
+                                {
+                                    time? <p>Time out</p> : <p className="text-center my-4">{timer}</p>
+                                }
+                            </div>
                             </div>
                         </div>
                     </form>
