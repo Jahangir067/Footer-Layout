@@ -7,7 +7,7 @@ const Partners = () => {
             <div className="hero-content flex-col lg:flex-row">
 
                 <div className="text-center w-full lg:w-6/12 lg:text-left text-black">
-                    <h3 className="bg-clip-text text-transparent text-pink-500">HIRE THE BEST</h3>
+                    <h3 className="text-pink-500">HIRE THE BEST</h3>
                     <h1 className="text-5xl font-bold">Your Talent Hunt Stops Right Here!</h1>
                     <p className="py-6">Our dedicated placement team will get in touch with you to discuss your requirement and take you through the hiring process, learner profiles and timelines.</p>
                     <p>Our dedicated placement team will get in touch with you to discuss your requirement and take you through the hiring process, learner profiles and timelines.</p>
